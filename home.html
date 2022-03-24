@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="data:,">
+
+        <!-- jquery -->
+
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="main.css"> -->
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </link>
+
+        <!-- api gateway generated sdk -->
+        <script type="text/javascript" src="./assets/js/sdk/lib/axios/dist/axios.standalone.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="./assets/js/sdk/apigClient.js"></script>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <title>Cloud Photo Album</title>
+    </head>
+
+</head>
+
+<body class="bg-dark">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
+    <script src="./assets/js/speechRecognition.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Upload </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <p>Click on the "Choose File" button to upload a photo:</p>
+
+                            <form>
+                                <input type="file" id="myFile" name="filename" accept=".png,.jpg,.jpeg">
+                            </form>
+
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <input placeholder="Enter tag" id="inp-tag" class="form-control"></input>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="tag-btn" class="btn btn-success">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Search a Photo </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input name="" placeholder="Search photo" id="search-inp"
+                                        class="form-control"></input>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <button id="start-btn" class="btn btn-success btn-block fa fa-microphone">Start</button>
+                                <button id="create" class="btn btn-danger btn-block fa fa-microphone"
+                                    style="display: none">End</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button id="search" class="btn btn-danger btn-block">Search</button>
+                        </div><br>
+                        <div class="row">
+                            <div id="result"></div>
+
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p id="instration">Input keywords or Press Start Voice Recognition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var apigClient = apigClientFactory.newClient({});
+
+    </script>
+</body>
+
+</html>
